@@ -1,16 +1,19 @@
 #include <stdio.h>
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
+* main - Print alphabet
+*
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
-	char hexa[] = "0123456789abcdef\n";
-
-	for(int x = 0; x < 17; x++)
+	int i;
+	for (i = 48; i <= 57; i++)
 	{
-		putchar(hexa[x]);
+		putchar(i);
+	}
+	for (i = 97; i <= 102; i++)
+	{
+		putchar(i);
 	}
 	putchar('\n');
 	return (0);
