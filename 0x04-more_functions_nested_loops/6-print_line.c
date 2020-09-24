@@ -2,16 +2,19 @@
 
 void print_line(int n)
 {
-	for (i = 0; i < n; i++)
+	int x;
+	
+	if (n <= 0)
 	{
-		if (n > 0)
+		_putchar('\n');
+	}
+	else
+	{
+		for (x = 0; x < n; x++)
 		{
 			_putchar('_');
-		}
-		else
-		{
-			_putchar('\n');
 		}
 	}
 	_putchar('\n');
 }
+
