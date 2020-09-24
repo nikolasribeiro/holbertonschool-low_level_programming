@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 /**
   * main - entry block
@@ -7,7 +6,7 @@
   */
 int main(void)
 {
-	long int x; 
+	long int x;
 	long int num = 612852475143;
 
 	for (x  = 2; x <= num; x++)
