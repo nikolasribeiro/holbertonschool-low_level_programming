@@ -1,20 +1,23 @@
-#include "holberton.h"
 
+#include "holberton.h"
+/**
+  * print_line - function that prints a straight line
+  * @n: takes in an integer
+  */
 void print_line(int n)
 {
-	int x;
-	
-	if (n <= 0)
+	int i;
+
+	for (i = 0; i < n; i++)
 	{
-		_putchar('\n');
-	}
-	else
-	{
-		for (x = 0; x < n; x++)
+		if (n > 0)
 		{
 			_putchar('_');
+		}
+		else
+		{
+			_putchar('\n');
 		}
 	}
 	_putchar('\n');
 }
-
