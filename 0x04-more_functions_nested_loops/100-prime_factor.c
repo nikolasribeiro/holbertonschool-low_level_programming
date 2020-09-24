@@ -15,7 +15,6 @@ int main(void)
 		if (num % x == 0)
 		{
 			num = num / x;
-			x--;		
 		}
 	}
 	printf("%li\n", x);
