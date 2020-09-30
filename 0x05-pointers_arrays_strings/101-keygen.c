@@ -66,7 +66,7 @@ int main(void)
 	}
 	password[i++] = (2772 - num);
 	password[i] = '\0';
-	printf("%s", password);
+	printf("%s\n", password);
 
 	return (0);
 }
