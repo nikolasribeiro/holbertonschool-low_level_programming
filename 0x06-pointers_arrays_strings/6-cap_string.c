@@ -1,43 +1,28 @@
 #include "holberton.h"
+
 /**
-  * cap_string - capitalizes all words of a string
-  * @s: takes in a string
-  * Return: s, the string
-  */
+ * cap_string - capitalizes a string
+ * @s: string
+ * Return: string
+ */
+
 char *cap_string(char *s)
 {
 	int i;
 
 	if (s[0] >= 'a' && s[0] <= 'z')
 	{
-		s[0] -= 32;
+		s[0] = s[0] - 32;
 	}
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 1; s[i] != '\0'; i++)
 	{
-	
-		if(i==0)
+		if ((s[i - 1] == ' ' || s[i - 1] == '\n' || s[i - 1] == '\t'
+		     || s[i - 1] == ',' || s[i - 1] == ';' || s[i - 1] == '!'
+		     || s[i - 1] == '?' || s[i - 1] == '"' || s[i - 1] == '('
+		     || s[i - 1] == ')' || s[i - 1] == '{' || s[i - 1] == '}'
+		     || s[i - 1] == '.') && (s[i] >= 'a' && s[i] <= 'z'))
 		{
-			if(s[i]>='a' && s[i]<='z')
-			{
-				s[i]=s[i]-32;
-			}
-			continue;
-		}
-		if(s[i]==' ')
-		{
-			++i;
-			if(s[i]>='a' && s[i]<='z')
-			{
-				s[i]=s[i]-32;
-				continue;
-			}
-		}
-		else
-		{
-			if(s[i]>='A' && s[i]<='Z')
-			{
-				s[i]=s[i]+32;
-			}
+			s[i] = s[i] - 32;
 		}
 	}
 	return (s);
