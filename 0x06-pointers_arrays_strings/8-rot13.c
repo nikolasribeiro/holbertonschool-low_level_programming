@@ -1,26 +1,27 @@
 #include "holberton.h"
-/**
-* rot13 - Function that reverses the content of an array of integers.
-*
-* @str: s is the array
-*
-* Return: Always 0.
-*/
-char *rot13(char *str)
-{
-	int i = 0, k;
-	char s[] =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char s1[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+#include <stdio.h>
 
-	for (; str[i] != '\0'; i++)
-	{
-		for (k = 0; k < 52; k++)
-		{
-			if (s[k] == str[i])
-			{
-				str[i] = s1[k];
-			}
-		}
-	}
-	return (str);
+/**
+ * rot13 - check the code for Holberton School students.
+ * @a: var
+ * Return: Always 0.
+ */
+char *rot13(char *a)
+{
+int i = 0, j = 0;
+char letra1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char letra2[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+while (*(a + i) != 0)
+{
+for (j = 0; j <= 52; j++)
+{
+if (*(a + i) == letra1[j])
+{
+*(a + i) = letra2[j];
+break;
+}
+}
+i++;
+}
+return (a);
 }
