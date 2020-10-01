@@ -19,10 +19,6 @@ char *rot13(char *s)
 			{
 				s[i] = second_abc[j];
 			}
-			else if (s[i] == second_abc[j])
-			{
-				s[i] = first_abc[j];
-			}
 		}
 	}
 	return (s);
