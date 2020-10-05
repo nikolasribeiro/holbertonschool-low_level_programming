@@ -1,2 +1,1 @@
-# holbertonschool-low_level_programming
-C Programming 
+this is a readme file
