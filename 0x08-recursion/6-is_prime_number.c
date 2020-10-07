@@ -14,7 +14,7 @@ int is_prime_number(int n)
 }
 
 /**
-* helper_prime - helps find the prime number
+* helper - helps find the prime number
 * @i: takes in an integer
 * @n: takes in an integer
 * Return: increment i and compare to n
