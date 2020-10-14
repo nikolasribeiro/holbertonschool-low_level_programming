@@ -24,11 +24,16 @@ int get_length(char *str)
 */
 char *_strdup(char *str)
 {
+	if (str == NULL)
+	{
+		return ('\0');
+	}
+
 	int LENGTH = get_length(str);
 	char *copy = (char *)malloc((LENGTH + 1) * sizeof(char));
 	int i;
 
-	if (copy == NULL || str == NULL)
+	if (copy == NULL)
 	{
 		return ('\0');
 	}
