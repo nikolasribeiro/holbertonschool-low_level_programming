@@ -24,8 +24,6 @@ int get_length(char *str)
 */
 char *_strdup(char *str)
 {
-
-	int LENGTH = get_length(str);
 	char *copy;
 	unsigned int i;
 
@@ -34,7 +32,7 @@ char *_strdup(char *str)
 		return ('\0');
 	}
 
-	copy = (char *)malloc((LENGTH + 1) * sizeof(char));
+	copy = (char *)malloc((get_length(str) + 1) * sizeof(char));
 
 	if (copy == NULL)
 	{
