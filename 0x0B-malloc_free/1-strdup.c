@@ -1,7 +1,10 @@
 #include "holberton.h"
 #include <stdlib.h>
-
-
+/**
+* get_length - function to count string length
+* @str: takes in string
+* Return: returns string length
+*/
 int get_length(char *str)
 {
 	int l;
@@ -14,6 +17,11 @@ int get_length(char *str)
 	return (l);
 }
 
+/**
+* _strdup - returns pointer to a new string, dup of str
+* @str: takes in string
+* Return: returns pointer to new string
+*/
 char *_strdup(char *str)
 {
 	int LENGTH = get_length(str);

@@ -1,7 +1,10 @@
 #include "holberton.h"
 #include <stdlib.h>
-
-
+/**
+* get_length - function to count string length
+* @str: takes in string
+* Return: returns string length
+*/
 int get_length(char *str)
 {
 	int l;
@@ -13,9 +16,12 @@ int get_length(char *str)
 
 	return (l);
 }
-
-
-
+/**
+* str_concat - concats two strings
+* @s1: takes in string
+* @s2: takes in string
+* Return: returns a pointer to concat, followed by null
+*/
 char *str_concat(char *s1, char *s2)
 {
 	char *concat;
@@ -32,14 +38,14 @@ char *str_concat(char *s1, char *s2)
 
 	if (s2 == NULL)
 	{
-		s2 = " ";
+		s2 = "";
 	}
 	else
 	{
 		l2 = get_length(s2);
 	}
 
-	concat = (char *)malloc((l1 * sizeof(char) + l2 * sizeof(char)) + 1);
+	concat = (char *)malloc((l1 * sizeof(char)) + (l2 * sizeof(char)) + 1);
 
 	if (concat == NULL)
 	{
@@ -56,6 +62,6 @@ char *str_concat(char *s1, char *s2)
 		concat[i + j] = s2[j];
 	}
 
+	concat[i + j] = '\0';
 	return (concat);
-
 }
