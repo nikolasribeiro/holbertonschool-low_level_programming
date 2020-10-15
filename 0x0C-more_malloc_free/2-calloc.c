@@ -17,17 +17,17 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 
 	neo = malloc(nmemb * size);
-	
+
 	if (neo == NULL)
 	{
 		return (NULL);
 	}
-	
-	
+
+
 	for (i = 0; i < nmemb * size; i++)
 	{
 		neo[i] = 0;
 	}
-	
+
 	return (neo);
 }
