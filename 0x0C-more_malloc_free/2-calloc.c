@@ -18,7 +18,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	neo = malloc(nmemb * size);
 	
-	if (neo == NULL)
+	if (neo == 0)
 	{
 		return (NULL);
 	}
