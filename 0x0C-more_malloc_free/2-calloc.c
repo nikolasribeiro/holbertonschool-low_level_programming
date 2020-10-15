@@ -1,47 +1,43 @@
-
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
-
 /**
- * _memset - prints buffer in hexa
- * @s: buffer
- * @b: write
- * @n: size
- * Return: Nothing.
- */
-char *_memset(char *s, char b, unsigned int n)
+* set_memory- prints buffer in hexa
+* @s: string
+* @b: write
+* @n: size of string
+* Return: Pointer to string.
+*/
+char *set_memory(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 
 	for (i = 0; i < n; i++)
 	{
-		*(s + i) = b;
+		s[i] = b;
 	}
 	return (s);
 }
 /**
- * _calloc - function that concatenates two strings.
- * @nmemb: string s1.
- * @size: string s2.
- *
- * Return: Always 0.
- */
+* _calloc - function that allocates memory from an array using malloc
+* @nmemb: number of elements to be allocated
+* @size: size of the elements
+* Return: pointer to the allocated memory of NUll if failed
+*/
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *str;
+	void *string;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
 
-	str = malloc(nmemb * size);
-	if (str == NULL)
+	string = malloc(nmemb * size);
+	if (string == NULL)
 	{
 		return (NULL);
 	}
-	_memset(str, 0, nmemb * size);
+	set_memory(string, 0, nmemb * size);
 
-	return (str);
+	return (string);
 }
