@@ -15,15 +15,14 @@ Once cloned over, the repository will contain the following files:
 | 3-array_range.c | script that contain a function that creates an array of integers|
 
 ## How to Use
-### For C files
 To run the C files, you need to use the gcc command to compile, like so:
 ```bash
-$ gcc -Wall <FILE-NAME>
+$ gcc -Wall -pedantic -Werror -Wextra <FILE-NAME> -o <FILE-OUTPUT>
 ```
-Example output for **2-calloc.c**. Note that `a.out` is the default output file when C programs are compiled.
+Example use for **2-calloc.c**.
 ```bash
-$ gcc -Wall 2-calloc.c
-$ ./a.out
+$ gcc -Wall -pedantic -Werror -Wextra 2-calloc.c -o calloc
+$ ./calloc
 ```
 
 ### Author
