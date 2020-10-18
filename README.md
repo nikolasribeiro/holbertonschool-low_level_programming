@@ -1,5 +1,5 @@
 # Holberton School Low Level Programming
-## **IN THIS REPOSITORY YOU CAN SEE THE NEXT TOPICS IN C PROGRAMMING LANGUAGE**
+This repository contain all the tasks of the project Low Level in C
 
 |   **Directories**    |
 |---------------|
