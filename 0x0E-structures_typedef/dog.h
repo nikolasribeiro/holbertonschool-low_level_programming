@@ -9,7 +9,7 @@
 * Description: dog structure with 3 members
 *
 */
-struct dog 
+struct dog
 {
 	char *name;
 	float age;
