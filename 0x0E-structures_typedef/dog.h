@@ -1,6 +1,14 @@
 #ifndef DOG_H
 #define DOG_H
-
+/**
+* struct dog - dog structure
+* @name: name of dog
+* @age: age of dog
+* @owner: owner of dog
+*
+* Description: dog structure with 3 members
+*
+*/
 struct dog 
 {
 	char *name;
@@ -15,4 +23,4 @@ dog_t *new_dog(char *name, float age, char *owner);
 char *copy(char *dest, char *src);
 int get_length(char *str);
 void free_dog(dog_t *d);
-#endif
+#endif/*DOG*/
