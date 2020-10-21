@@ -17,13 +17,13 @@ int main(int argc, char *argv[])
 	}
 
 	bytes = atoi(argv[1]);
-	
+
 	if (bytes < 0)
 	{
 		printf("Error\n");
 		return (2);
 	}
-	
+
 	for (i = 0; i < (bytes - 1); i++)
 	{
 		if (bytes != 0)
