@@ -16,6 +16,9 @@ This repository contain all the tasks of the project Low Level in C
 | 0x0A. C - argc, argv |
 | 0x0B. C - malloc, free |
 | 0x0C. C - More malloc, free |
+| 0x0D. C - Preprocessor |
+| 0x0E. C - Structures & Typedef |
+| 0x0F. C - Pointers to Functions |
 
 
 ### Author
