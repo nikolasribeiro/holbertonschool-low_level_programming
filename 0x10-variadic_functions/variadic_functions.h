@@ -10,9 +10,9 @@
 typedef struct op
 {
 	char *c;
-	void (*f)();
+	void (*call_fun)();
 
-} p_t;
+} options;
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
