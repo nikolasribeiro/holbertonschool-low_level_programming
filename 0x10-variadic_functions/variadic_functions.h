@@ -5,7 +5,7 @@
 /**
 * struct op - op of type struct
 * @c: char type c
-* @f: function associated
+* @call_fun: function associated
 */
 typedef struct op
 {
