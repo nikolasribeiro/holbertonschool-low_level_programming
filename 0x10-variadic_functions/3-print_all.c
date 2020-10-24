@@ -53,7 +53,7 @@ void print_string(char *str, va_list valist)
 void print_all(const char * const format, ...)
 {
 	va_list valist;
-	int i, j;
+	int i = 0, j;
 	char *str;
 
 	options select_option[] = {
@@ -66,17 +66,20 @@ void print_all(const char * const format, ...)
 
 	va_start(valist, format);
 	str = "";
-	
-	for (i = 0; format != NULL && format[i] != '\0'; i++)
+	while (format && format[i])
 	{
-		for (j = 0; select_option[j].c != NULL; j++)
+		j = 0;
+		while (j < 4)
 		{
-			if (format[i] == select_option[j].c[0])
+			if (select_option[j].c[0] == format[i])
 			{
 				select_option[j].call_fun(str, valist);
 				str = ", ";
+				break;
 			}
+			j++;
 		}
+	i++;
 	}
 	printf("\n");
 	va_end(valist);
