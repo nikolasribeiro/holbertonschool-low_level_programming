@@ -6,13 +6,18 @@
 */
 int sum_them_all(const unsigned int n, ...)
 {
-	unsigned int i, sum = 0;
+	unsigned int i, sum;
 	va_list valist;
+
+	if (n == 0)
+	{
+		return (0);
+	}
 
 	va_start(valist, n);
 	for (i = 0; i < n; i++)
 	{
-		sum += va_arg(valist, int);
+		sum += va_arg(valist, unsigned int);
 	}
 	va_end(valist);
 
