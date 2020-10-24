@@ -4,8 +4,6 @@
 
 global _start
 
-
-
 section .text:
 
 _start:
@@ -22,4 +20,3 @@ _start:
 section .data:
 	message: db "Hello, Holberton!", 0xA
 	message_length equ $-message
-
