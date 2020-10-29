@@ -1,17 +1,19 @@
 #include "lists.h"
 /**
-* free_list - free memory
-* @head: pointer to type list_t
-*/
+ * free_list - free a list
+ * @head: the head of the list
+ * Return: nothing
+ */
 void free_list(list_t *head)
 {
-	if (head != NULL)
+	list_t *mr_robot;
+
+	while (head != NULL)
 	{
-		free(head->next);
-		if (head->str)
-		{
-			free(head->str);
-		}
-		free(head);
+		mr_robot = head;
+		head = head->next;
+		free(mr_robot->str);
+		free(mr_robot);
 	}
+	free(head);
 }
