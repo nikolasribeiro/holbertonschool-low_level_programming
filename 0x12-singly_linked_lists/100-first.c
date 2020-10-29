@@ -1,8 +1,9 @@
 #include<stdio.h>
 
 /**
- * start_before_main - Apply the constructor attribute to myStartupFun() so that it
- *   is executed before main()
+ * start_before_main - Apply the constructor
+ * attribute to myStartupFun() so that it
+ * is executed before main()
  */
 void start_before_main(void) __attribute__ ((constructor));
 
