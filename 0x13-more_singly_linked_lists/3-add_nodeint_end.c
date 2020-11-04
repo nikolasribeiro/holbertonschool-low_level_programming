@@ -1,5 +1,9 @@
 #include "lists.h"
-/*
+/**
+  * add_nodeint_end - add a new node at the end of listint_t list
+  * @head: pointer to a pointer
+  * @n: takes in an int
+  * Return: pointer to the end
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
@@ -22,7 +26,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	}
 
 	elliot_alderson = *head;
-	
+
 	while (elliot_alderson->next != NULL)
 	{
 		elliot_alderson = elliot_alderson->next;
