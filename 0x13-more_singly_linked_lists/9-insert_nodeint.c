@@ -1,50 +1,50 @@
 #include "lists.h"
 /**
-  * insert_nodeint_at_index - inserts a new node at a given position
-  * @head: pointer to a pointer
-  * @idx: takes in the index
-  * @n: takes in an integer
-  * Return: NULL if function fail
+ * insert_nodeint_at_index - sum the values of the list.
+ *
+ * @head: A pointer to the first node of the list
+ * @idx: index of the list.
+ * @n: value of number.
+ * Return: Value of a node index.
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new_node;
-	listint_t *temp;
-	unsigned int counter = 0;
+	unsigned int i = 1;
+	listint_t *index_node = *head;
+	listint_t *insert;
+	listint_t *h = *head;
 
 	if (head == NULL)
 	{
 		return (NULL);
 	}
 
-	new_node = malloc(sizeof(listint_t));
-	new_node->n = n;
+	while (i < idx)
+	{
+		index_node = (*head)->next;
+		*head = index_node;
+		++i;
+	}
 
-	if (newNode == NULL)
+	insert = malloc(sizeof(listint_t));
+
+	if (insert == NULL)
 	{
 		return (NULL);
 	}
 
+	insert->n = n;
+
 	if (idx == 0)
 	{
-		new_node->next = *head;
-		*head = new_node;
-		return (new_node);
+		insert->next = *head;
+		*head = insert;
 	}
-
-	temp = *head;
-	while (temp != NULL)
+	else
 	{
-		if (counter + 1 == idx)
-		{
-			new_node->next = temp->next;
-			temp->next = new_node;
-			return (new_node);
-		}
-		temp = temp->next;
-		counter++;
+		insert->next = (*head)->next;
+		(*head)->next = insert;
+		*head = h;
 	}
-
-	free(new_node);
-	return (NULL);
+	return (insert);
 }
