@@ -65,50 +65,67 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+	
 	/* Call the function to check files passed by args */
 	check_args(argv[1], argv[2]);
+	
 	/* Open the file and save the return in the file description */
 	file_from = open(argv[1], O_RDONLY);
+	
 	/* Check if the file was opened successfully, if is -1 => error */
 	if (file_from == -1)
 		read_error(argv[1]);
+	
 	/* Open the file and save the return in the file description */
 	file_to = open(argv[2], O_CREAT | O_RDONLY | O_WRONLY | O_TRUNC, mode);
+	
 	/* Check if the file was opened successfully, if is -1 => error */
 	if (file_to == -1)
 		write_error(argv[2]);
 	buffer = malloc(sizeof(char) * BUFF_SIZE);
+	
 	/* Check if the pointer came NULL */
 	if (buffer == NULL)
 		return (1);
+	
 	/* Read the content file */
 	file_fread = read(file_from, buffer, BUFF_SIZE);
+	
 	/* Check if the file was opened successfully */
 	if (file_fread == -1)
 		read_error(argv[1]);
+	
 	/* while file are biggest than zero, write content from fileto, to filefrom */
 	while (file_fread > 0)
 	{
+		
 		/* Write the file with the content obtained from file_to */
 		file_write = write(file_to, buffer, file_fread);
+		
 		/* Check if the file was writed successfully */
 		if (file_write == -1)
 			write_error(argv[2]);
+		
 		/* Write the file with the content obtained from file_from */
 		file_fread = read(file_from, buffer, BUFF_SIZE);
 		if (file_fread == -1)
 			read_error(argv[1]);
 	}
+	
 	/* Close the file when finished*/
 	file_fclose = close(file_from);
+	
 	/* Check if the file was closed successfully */
 	if (file_fclose == -1)
 		close_error(file_fclose);
+	
 	/* Close the file when finished*/
 	file_close = close(file_to);
+	
 	/* Check if the file was closed successfully */
 	if (file_close == -1)
 		close_error(file_close);
+	
 	/* Free the buffer from heap memory */
 	free(buffer);
 	return (0);
