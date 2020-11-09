@@ -3,6 +3,7 @@
 /**
 * read_error - returns error if file_from doesn't exist or you can't read it
 * @file: pointer to a file
+* To see the code with comments, go to test_folders/3-cp_with_comments.c
 */
 void read_error(char *file)
 {
@@ -14,6 +15,7 @@ void read_error(char *file)
 /**
 * write_error - returns an error if you can't create/write to a file_to
 * @file: pointer to a file
+* To see the code with comments, go to test_folders/3-cp_with_comments.c
 */
 void write_error(char *file)
 {
@@ -25,6 +27,7 @@ void write_error(char *file)
 /**
 * close_error - return an error if you can't close a file descriptoy
 * @file: the file descriptor value
+* To see the code with comments, go to test_folders/3-cp_with_comments.c
 */
 void close_error(int file)
 {
@@ -37,6 +40,7 @@ void close_error(int file)
 * check_args - function to return error if files are NULL
 * @file: pointer to a file
 * @file2: pointer to another file
+* To see the code with comments, go to test_folders/3-cp_with_comments.c
 */
 void check_args(char *file, char *file2)
 {
@@ -51,6 +55,7 @@ void check_args(char *file, char *file2)
 * @argc: number of arguments
 * @argv: array of arguments
 * Return: 0 success
+* To see the code with comments, go to test_folders/3-cp_with_comments.c
 */
 int main(int argc, char *argv[])
 {
