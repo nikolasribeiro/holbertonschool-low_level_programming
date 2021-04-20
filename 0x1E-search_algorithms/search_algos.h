@@ -1,12 +1,10 @@
-#ifndef SEARCH_ALGOR
-#define SEARCH_ALGOR
-
+#ifndef SEARCH_H
+#define SEARCH_H
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int linear_search(int *array, size_t size, int value);
 int binary_search(int *array, size_t size, int value);
+int forUchecker(int *array, int value, int low, int high, size_t size);
 
-
-#endif
+#endif /* SEARCH_H */

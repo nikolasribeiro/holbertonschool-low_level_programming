@@ -1,40 +1,56 @@
 #include "search_algos.h"
-
 /**
- * binary_search - function that searches for a value in an array
- * of integers using the Binary search algorithm
- * @array: input array elements
- * @size: the size of array
- * @value: is the value that algorithm to search
- * Return: Always EXIT_SUCCESS
+ * binary_search - searches for a value in an array of integers
+ * @array: pointer to the first element of the array
+ * @size: number of elements in array
+ * @value: value to search
+ *
+ * Return: first index where value is located
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int i;
-	int j;
-	int left = 0;
-	int right = size - 1;
+	int index = 0;
 
-	if (array == NULL)
+	if (!array)
 		return (-1);
+	index = forUchecker(array, value, 0, size - 1, size);
+	return (index);
+}
 
-	while (left <= right)
+/**
+ * forUchecker - searches for a value in an array of integers
+ * @array: pointer to the first element of the array
+ * @size: number of elements in array
+ * @value: value to search
+ * @low: lowest value of the subarray
+ * @high: highest value of the subarray
+ *
+ * Return: first index where value is located
+ */
+int forUchecker(int *array, int value, int low, int high, size_t size)
+{
+	int mid = low + (high - low) / 2;
+	int i = 0;
+
+	if (high >= low)
 	{
 		printf("Searching in array: ");
-		for (i = left; i <= right; i++)
+		for (i = low; i <= high; i++)
 		{
-			if (i == right)
-				printf("%i\n", array[i]);
+			if (i == high)
+				printf("%d", array[i]);
 			else
-				printf("%i, ", array[i]);
+				printf("%d, ", array[i]);
 		}
-		j = left + (right - left) / 2;
-		if (array[j] == value)
-			return (j);
-		else if (value > array[j])
-			left = j + 1;
-		else if (value < array[j])
-			right = j - 1;
+		printf("\n");
+		/* If found at mid, then return it */
+		if (array[mid] == value)
+			return (mid);
+		/* Search the left half */
+		if (array[mid] > value)
+			return (forUchecker(array, value, low, mid - 1, size));
+		/* Search the right half */
+		return (forUchecker(array, value, mid + 1, high, size));
 	}
 	return (-1);
 }
